@@ -130,19 +130,27 @@ Lucen 的 API Key 会区分两个概念：
 - 余额倍率：使用余额计费时，请求按该分组倍率折算消耗
 - 套餐倍率：使用套餐权益时，请求按该分组倍率计入套餐额度
 
-常用路由分组：
+当前控制台可见分组：
 
-| 分组 | 平台 | 余额倍率 | 套餐倍率 | 适用场景 |
+| 分组 | 平台 | 余额倍率 | 套餐倍率 | 备注 |
 | --- | --- | ---: | ---: | --- |
-| `plus号池-codex官转` | OpenAI | 1.3x | 4x | Plus / Codex 官转池，适合作为通用 OpenAI 兼容入口 |
-| `plus号池-codex` | OpenAI | 1.3x | 4x | 稳定可用的 Codex/Plus 池 |
-| `codex-pro-new` | OpenAI | 2x | 6x | Pro/Codex 高阶池 |
-| `gpt生图image2` | OpenAI | 1.3x | 4x | GPT 生图专用池，当前生图价格配置为 1k/2k/4k 均 0.05 |
-| `cc逆向支持4.7支持1m上下文` | Anthropic | 4x | 13x | Claude Code / Claude 长上下文场景 |
-| `反重力Claude code逆向` | Anthropic | 4x | 15x | Claude Code 逆向池 |
-| `gemini+生图` | Gemini | 4x | 15x | Gemini 文本与生图场景，生图价格配置为 1k/2k/4k 均 2 |
+| `cc-kiro逆向0.25，高缓存(余额0.25倍，套餐0.7倍)` | Anthropic | 0.25x | 0.7x | Claude Code / Kiro 逆向，高缓存 |
+| `cc-高仿山寨(余额0.2，套餐0.5)` | Anthropic | 0.2x | 0.5x | Claude Code 逆向 |
+| `cc逆向-aws-0.55` | Anthropic | 0.55x | 2x | AWS Claude Code 逆向 |
+| `codex-pro独立线路(余额0.15，套餐0.65)` | OpenAI | 0.15x | 0.65x | Codex Pro 独立线路 |
+| `codex-plus独立线路(余额0.12,套餐0.4)` | OpenAI | 0.12x | 0.4x | Codex Plus 独立线路 |
+| `cc-max-限制客户端(高速)-1.1` | Anthropic | 1.1x | 5x | Claude Max 高速线路，限制客户端 |
+| `codex-动态调价pro-快的里面最便宜的-0.13` | OpenAI | 0.13x | 0.55x | Codex Pro 动态调价线路 |
+| `所有国产主流模型-cc协议-0.05` | Anthropic | 0.05x | 0.15x | 国产主流模型，Claude Code 协议 |
+| `cc-aws福利-只有opus-(限时随时没)-0.1` | Anthropic | 0.1x | 0.25x | 限时福利线路，可能随时调整 |
+| `grok-openai协议-(余额0.5，套餐2)` | OpenAI | 0.5x | 2x | Grok，OpenAI 协议 |
+| `cc-max专属,自用，别选` | Anthropic | 0.85x | 5x | 专属分组，不建议普通用户选择 |
+| `openrouter-cc-官key-3.5r一刀` | Anthropic | 3.5x | 15x | OpenRouter Claude Code 官方 Key |
+| `cc-aws-b` | Anthropic | 2.1x | 9x | AWS Claude Code 线路 |
+| `codex-pro尊享-0.25` | OpenAI | 0.25x | 1x | Codex Pro 尊享线路 |
+| `codex-spark-余额0.03，套餐0.1` | OpenAI | 0.03x | 0.1x | Codex Spark 低倍率线路 |
 
-历史兼容或特殊分组可能仍在后台存在，例如旧 OpenAI 池、特价 Claude 池、待下线分组等。新建 Key 时建议优先选择控制台推荐的分组。
+分组状态、账号容量、是否专属、是否停用、是否限时以及最终可选范围，以 lucen.cc 控制台实时显示为准。新建 Key 时建议优先选择控制台推荐且状态正常的分组。
 
 ## 套餐支持
 
